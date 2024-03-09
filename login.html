@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <input type="radio" name="login-tab" id="student-tab" checked>
+            <input type="radio" name="login-tab" id="tutor-tab">
+            <div class="tab-labels">
+                <label for="student-tab" class="student-tab">Student</label>
+                <label for="tutor-tab" class="tutor-tab">Tutor</label>
+            </div>
+            <div class="login-content">
+                <div class="login-form student-login">
+                    <h2>Student Login</h2>
+                    <form action="#" method="post">
+                        <div class="textbox">
+                            <input type="text" placeholder="Username" name="username" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="password" placeholder="Password" name="password" required>
+                        </div>
+                        <input type="submit" class="btn" value="Sign in">
+                    </form>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div class="login-form tutor-login">
+                    <h2>Tutor Login</h2>
+                    <form action="#" method="post">
+                        <div class="textbox">
+                            <input type="text" placeholder="Username" name="username" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="password" placeholder="Password" name="password" required>
+                        </div>
+                        <input type="submit" class="btn" value="Sign in">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

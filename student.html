@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoring Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            color:  #ff69b4;
+        }
+        h2,p,div{
+            color :  #ff69b4;
+        }
+        .search-section {
+            margin-top: 50px;
+        }
+        .flashcard-section {
+            margin-top: 50px;
+        }
+        .flashcard-container {
+            margin-top: 20px;
+        }
+        .flashcard {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .flashcard .content {
+            flex-grow: 1;
+        }
+        .flashcard .remove-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        select,option{
+            height : 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Tutoring Platform</h1>
+        
+        <!-- Tutor search section -->
+        <div class="search-section">
+            <h2>Tutor Search</h2>
+            <form>
+                <label for="language">Language:</label>
+                <select id="language">
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <!-- Add more language options as needed -->
+                </select>
+                <label for="experience">Experience:</label>
+                <select id="experience">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                <label for="pricing">Pricing:</label>
+                <select id="pricing">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Scheduling feature -->
+        <div class="scheduling-section">
+            <h2>Scheduling</h2>
+            <p>Choose a tutor and select a time slot:</p>
+            <!-- Add scheduling interface here -->
+        </div>
+        
+        <!-- Flashcard section -->
+        <div class="flashcard-section">
+            <h2>Flashcards</h2>
+            <form id="flashcard-form">
+                <label for="flashcard-content">Flashcard Content:</label>
+                <input type="text" id="flashcard-content"  required>
+                <button type="submit">Add Flashcard</button>
+            </form>
+            <div class="flashcard-container">
+                <!-- Flashcards will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for flashcard functionality
+        const flashcardForm = document.getElementById('flashcard-form');
+        const flashcardContainer = document.querySelector('.flashcard-container');
+
+        flashcardForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const flashcardContent = document.getElementById('flashcard-content').value;
+            if (flashcardContent.trim() !== '') {
+                const flashcard = document.createElement('div');
+                flashcard.classList.add('flashcard');
+                flashcard.innerHTML = `
+                    <div class="content">${flashcardContent}</div>
+                    <button class="remove-btn">Remove</button>
+                `;
+                flashcardContainer.appendChild(flashcard);
+                flashcardForm.reset();
+            }
+        });
+
+        flashcardContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('remove-btn')) {
+                event.target.parentElement.remove();
+            }
+        });
+    </script>
+</body>
+</html>
