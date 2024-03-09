@@ -6,10 +6,18 @@
     <title>Tutoring Platform</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Verdana ;
             margin: 0;
             padding: 0;
-            background-color: #000000;
+            background-image : url(https://th.bing.com/th/id/R.378b0235736810ad6f03e1f3c634016c?rik=H63vA%2fZqN2jNZw&riu=http%3a%2f%2fwww.alc.edu%2fwp-content%2fuploads%2f2017%2f08%2fblackboard-e1502478894337.jpg&ehk=8dfbU49hqczYdcNr28kTqogLUHWXOjLUcOLApbhgNCg%3d&risl=&pid=ImgRaw&r=0);
+        }
+        .f{
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .w{
+            font-size: 35px;
+            font-weight: bold; 
         }
         .container {
             width: 80%;
@@ -18,11 +26,12 @@
             padding-top: 50px;
         }
         h1 {
-            color:  #ff69b4;
+            color: white;
         }
         h2,p,div{
-            color :  #ff69b4;
+            color :  white;
         }
+        
         .search-section {
             margin-top: 50px;
         }
@@ -52,64 +61,144 @@
             border-radius: 3px;
             cursor: pointer;
         }
-        select,option{
-            height : 30px;
-            
+        
+        .pric{
+            margin-left: 55px;
+           
+        }
+        .exp{
+            margin-left: 55px;
+        }
+        .fl-box{
+            height: 30px;
+            width: 300px;
+            border-radius: 15px;
+
+        }
+        label,button{
+            font-size:25px;
+        }
+        .a{
+            height: 30px;
+            width: fit-content;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+        .fla{
+            font-size: 20px;
+        }
+        .lang{
+            font-size: 25px;
+        }
+        .exp{
+            font-size: 25px;
+        }
+        .pric{
+            font-size: 25px;
+        }
+        .search{
+            height: 30px;
+            width: fit-content;
+            font: bold;
+            border-radius: 15px;
+
+        }
+        .Welcome{
+            font-size: 45px;
+            font-weight: bold;
+        }
+        select{
+            height: 30px;
+            width: fit-content;
+            border-radius: 5px;
+        }
+        .select1{
+            height: 30px;
+            width: fit-content;
+            border-radius: 5px;
+        }
+        .select2{
+            height: 30px;
+            width: fit-content;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Our Tutoring Platform</h1>
         
-        <!-- Tutor search section -->
+    <div class="container">
+        <p class="Welcome">Welcome to Our Tutoring Platform</p>
         <div class="search-section">
-            <h2>Tutor Search</h2>
             <form>
-                <label for="language">Language:</label>
-                <select id="language">
+                <label for="language" class="lang">Language:</label>
+                <select class="select" id="language">
                     <option value="english">English</option>
                     <option value="spanish">Spanish</option>
                     <option value="french">French</option>
                     <!-- Add more language options as needed -->
                 </select>
-                <label for="experience">Experience:</label>
-                <select id="experience">
+                <label class="exp" for="experience">Experience:</label>
+                <select class="select1" id="experience">
                     <option value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
                     <option value="advanced">Advanced</option>
                 </select>
-                <label for="pricing">Pricing:</label>
-                <select id="pricing">
+                <label class="pric" for="pricing">Pricing:</label>
+                <select class="select2" id="pricing">
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
-                <button type="submit">Search</button>
+                <!-- <button class="search" type="submit">Search</button> -->
             </form>
         </div>
 
         <!-- Scheduling feature -->
         <div class="scheduling-section">
-            <h2>Scheduling</h2>
-            <p>Choose a tutor and select a time slot:</p>
+            <p class="w">Scheduling</p>
+            <p style="font-size:25px;">Choose a tutor and select a time slot:</p>
+    <div class="container">
+        <form action="#" method="post">
+            <label for="tutor">Choose a Tutor:</label>
+            <select id="tutor" name="tutor">
+                <option value="tutor1">Tutor 1</option>
+                <option value="tutor2">Tutor 2</option>
+                <option value="tutor3">Tutor 3</option>
+                <!-- Add more options as needed -->
+            </select>
+        </form>
+    </div>
+
+    <div class="container">
+        <form action="#" method="post">
+            <label for="time-slot">Choose a Time Slot:</label>
+            <select id="time-slot" name="time-slot">
+                <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                <option value="afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
+                <option value="evening">Evening (3:00 PM - 6:00 PM)</option>
+                <!-- Add more options as needed -->
+            </select>
+        </form>
+    </div>
+
+
             <!-- Add scheduling interface here -->
         </div>
-        
+
         <!-- Flashcard section -->
         <div class="flashcard-section">
-            <h2>Flashcards</h2>
+            
+            <p class="f">Flashcards</p>
             <form id="flashcard-form">
-                <label for="flashcard-content">Flashcard Content:</label>
-                <input type="text" id="flashcard-content"  required>
-                <button type="submit">Add Flashcard</button>
+                <label class="fla" for="flashcard-content">Flashcard Content:</label>
+                <input class="fl-box" type="text" id="flashcard-content" required>
+                <button class="a" type="submit"><strong>Add Flashcard</strong></button>
             </form>
             <div class="flashcard-container">
                 <!-- Flashcards will be dynamically added here -->
             </div>
         </div>
     </div>
-
     <script>
         // JavaScript code for flashcard functionality
         const flashcardForm = document.getElementById('flashcard-form');
